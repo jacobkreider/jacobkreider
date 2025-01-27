@@ -1,0 +1,92 @@
+/* css/guestbook.css */
+.guestbook-container {
+    font-family: 'M PLUS 1 Code', monospace;
+    color: #fceaff;
+    padding: 10px;
+}
+
+.entry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.entry-form input, 
+.entry-form textarea {
+    background: #43256E;
+    border: 1px solid #5F9EA0;
+    color: #fceaff;
+    padding: 5px;
+    font-family: 'M PLUS 1 Code', monospace;
+}
+
+.entry-form input[type="url"],
+.entry-form input[type="text"]#location {
+    font-size: 0.9em;
+    color: #b959e3;
+}
+
+.entry-form input[type="url"]::placeholder,
+.entry-form input[type="text"]#location::placeholder {
+    color: rgba(185, 89, 227, 0.6);
+}
+
+.entry-form textarea {
+    height: 60px;
+    resize: none;
+}
+
+.entry-form button {
+    background: #5F9EA0;
+    border: none;
+    color: #fceaff;
+    padding: 5px;
+    cursor: pointer;
+    font-family: 'M PLUS 1 Code', monospace;
+}
+
+.entry-form button:hover {
+    background: #4F8E90;
+}
+
+.entries-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.guestbook-entry {
+    border: 1px solid #5F9EA0;
+    margin-bottom: 8px;
+    padding: 8px;
+    background: #43256E;
+}
+
+.entry-header {
+    border-bottom: 1px solid #5F9EA0;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+    font-size: 0.9em;
+    color: #b959e3;
+}
+
+.entry-website,
+.entry-location {
+    font-size: 0.8em;
+    margin-left: 8px;
+}
+
+.entry-website a {
+    color: #4ECDC4;
+    text-decoration: none;
+}
+
+.entry-website a:hover {
+    text-decoration: underline;
+    color: #b959e3;
+}
+
+.entry-message {
+    font-size: 0.85em;
+    word-wrap: break-word;
+}

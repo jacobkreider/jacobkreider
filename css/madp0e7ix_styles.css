@@ -1,0 +1,136 @@
+:root {
+    --terminal-green: #33ff33;
+    --terminal-dark: #001800;
+    --terminal-darker: #000800;
+    --terminal-box: #003300;
+    --terminal-border: #00ff00;
+}
+
+body {
+    background-color: #000;
+    color: var(--terminal-green);
+    font-family: 'VT323', monospace;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.top-nav {
+    background-color: var(--terminal-dark);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--terminal-border);
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav a {
+    color: var(--terminal-green);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.top-nav a:hover {
+    background-color: var(--terminal-green);
+    color: var(--terminal-dark);
+}
+
+.terminal-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.terminal-header {
+    background-color: var(--terminal-box);
+    border: 1px solid var(--terminal-border);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.terminal-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+}
+
+.terminal-sidebar {
+    background-color: var(--terminal-box);
+    border: 1px solid var(--terminal-border);
+    padding: 10px;
+}
+
+.terminal-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.terminal-sidebar li {
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.terminal-content {
+    background-color: var(--terminal-box);
+    border: 1px solid var(--terminal-border);
+    padding: 20px;
+}
+
+.terminal-content hr {
+    border: none;
+    border-top: 1px solid var(--terminal-border);
+    margin: 10px 0;
+}
+
+.navigation-menu {
+    margin-top: 20px;
+}
+
+.menu-option {
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.menu-option.active {
+    background-color: var(--terminal-green);
+    color: var(--terminal-dark);
+}
+
+.status-line {
+    margin-top: 20px;
+    border-top: 1px solid var(--terminal-border);
+    padding-top: 10px;
+    text-align: right;
+}
+
+.demo-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.demo-2 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 10px;
+}
+
+@media (max-width: 768px) {
+    .terminal-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .top-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}

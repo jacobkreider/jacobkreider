@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Connection Lost</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --terminal-green: #33ff33;
+            --terminal-dark: #001800;
+            --terminal-darker: #000800;
+            --terminal-box: #003300;
+            --terminal-border: #00ff00;
+        }
+
+        body {
+            background-color: #000;
+            color: var(--terminal-green);
+            font-family: 'VT323', monospace;
+            line-height: 1.4;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .terminal-container {
+            background-color: var(--terminal-box);
+            border: 1px solid var(--terminal-border);
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: flicker 0.3s infinite;
+        }
+
+        .terminal-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--terminal-border);
+        }
+
+        .error-code {
+            font-size: 72px;
+            margin: 0;
+            animation: pulse 2s infinite;
+        }
+
+        .error-message {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .navigation {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--terminal-border);
+        }
+
+        .nav-option {
+            margin: 10px 0;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 20px;
+            background-color: var(--terminal-green);
+            animation: blink 1s infinite;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { color: var(--terminal-green); }
+            50% { color: #1a661a; }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.985; }
+            5% { opacity: 0.995; }
+            10% { opacity: 0.990; }
+            15% { opacity: 0.985; }
+            20% { opacity: 0.995; }
+            25% { opacity: 0.985; }
+        }
+
+        a {
+            color: var(--terminal-green);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <pre>
+CARRIER LOST - SIGNAL NOT FOUND
+[madp0e7ix BBS v1.0]
+[DISCONNECTED]
+            </pre>
+        </div>
+        
+        <div class="error-code">404</div>
+        <div class="error-message">SYSTEM ERROR: File or directory not found</div>
+        
+        <div class="navigation">
+            <div class="nav-option">> Press 1 to return to <a href="/">Home</a></div>
+            <div class="nav-option">> Press 2 to view <a href="/madp0e7ix.html">madp0e7ix BBS</a></div>
+            <div class="nav-option">> Press 3 to attempt reconnection...</div>
+            <div class="nav-option">></div>
+            <span class="cursor"></span>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '1') window.location.href = '/';
+            if (e.key === '2') window.location.href = '/madp0e7ix.html';
+            if (e.key === '3') window.location.reload();
+        });
+    </script>
+</body>
+</html>

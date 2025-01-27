@@ -1,0 +1,128 @@
+
+<html lang="en">
+<head>
+    <!-- Basic meta tags for proper character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A collection of bread baking recipes and adventures">
+    
+    <!-- Page title that appears in browser tab -->
+    <title>Baking Adventures</title>
+    
+    <!-- Stylesheet links -->
+    <link rel="stylesheet" href="css/baking-styles.css">
+</head>
+<body>
+    <!-- Site wrapper for overall layout control -->
+    <div class="site-wrapper">
+        <!-- Construction notice banner -->
+        <div class="construction-notice">
+            Still under construction! Check back soon for more recipes and content.
+        </div>
+        
+        <!-- Top navigation bar -->
+        <nav class="top-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="baking.html">Baking</a></li>
+                <li><a href="madp0e7ix.html">madp0e7ix</a></li>
+                <li><a href="https://teddykreider.com">Teddy Gallery</a></li>
+                <li><a href="amazing-tales.html">Amazing Tales</a></li>
+                <li><a href="https://neocities.org/site/madp0e7ix">About Me</a></li>
+            </ul>
+        </nav>
+
+        <!-- Side navigation for recipe categories -->
+        <nav class="side-nav">
+            <h3>Baking Adventures</h3>
+            
+            <!-- Home button at top of side navigation -->
+            <button class="recipe-link home-link" data-page="./pages/baking/home.html">
+                Baking Home
+            </button>
+
+            <!-- Sourdough section -->
+            <div class="recipe-section">
+                <h4>Sourdough</h4>
+                <ul>
+                    <!-- 
+                    These links are commented out as placeholders
+                    Uncomment and modify paths as needed
+                    
+                    <li>
+                        <button class="recipe-link" data-page="/baking/sourdough/basic.html">
+                            Basic Sourdough
+                        </button>
+                    </li>
+                    <li>
+                        <button class="recipe-link" data-page="/baking/sourdough/whole-wheat.html">
+                            Whole Wheat Sourdough
+                        </button>
+                    </li>
+                    -->
+                </ul>
+            </div>
+            
+            <!-- Sandwich Bread section -->
+            <div class="recipe-section">
+                <h4>Creating My Own Sandwich Bread</h4>
+                <ul>
+                    
+                    <li>
+                        <button class="recipe-link" data-page="/baking/sandwich_bread/sandwich_bread_current.html">
+                            Current Recipe
+                        </button>
+                    </li>
+                     <li>
+                        <button class="recipe-link" data-page="/baking/sandwich_bread/sandwich_bread_history.html">
+                            Previous Recipe Versions
+                        </button>
+                    </li>
+                    <li>
+                        <button class="recipe-link" data-page="/baking/coffee-can-rye.html">
+                            Coffee Can Rye
+                        </button>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            <!-- Cheese Making section -->
+            <div class="recipe-section">
+                <h4>Cheese</h4>
+                <ul>
+                    <!-- 
+                    <li>
+                        <button class="recipe-link" data-page="/baking/cheese/mozzarella.html">
+                            Mozzarella
+                        </button>
+                    </li>
+                    <li>
+                        <button class="recipe-link" data-page="/baking/cheese/ricotta.html">
+                            Ricotta
+                        </button>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content area where recipe content will be loaded -->
+        <main class="main-content">
+            <article class="recipe-card" id="recipeContent">
+                <!-- Default welcome content -->
+                <div class="recipe-header">
+                    <h1>Welcome to Baking Adventures</h1>
+                    <p>Select a recipe from the sidebar to begin your baking journey!</p>
+                    <p>This site is a collection of tested and refined recipes, complete with 
+                       process photos and detailed instructions to help you succeed in your 
+                       baking adventures.</p>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- JavaScript for handling dynamic content loading -->
+    <script src="css/baking.js"></script>
+</body>
+</html>

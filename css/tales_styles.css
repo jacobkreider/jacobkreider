@@ -1,0 +1,235 @@
+/* Theme Variables */
+:root {
+    --bg-primary: #FFFFFF;
+    --text-primary: #191970;
+    --accent-gold: #FFD700;
+    --accent-purple: #4B0082;
+    --sidebar-bg: #E6E6FA;
+}
+
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Courier New", monospace;
+    background-color: var(--bg-primary);
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M10 0l10 10-10 10L0 10z'/%3E%3C/g%3E%3C/svg%3E");
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Top Navigation */
+.top-nav {
+    background: var(--accent-purple);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--accent-gold);
+}
+
+.top-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.top-nav a {
+    color: var(--bg-primary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.top-nav a:hover {
+    border-color: var(--accent-gold);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Side Navigation */
+.side-nav {
+    background: var(--sidebar-bg);
+    padding: 1rem;
+    width: 250px;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    border-right: 3px solid var(--accent-gold);
+}
+
+.side-nav h3 {
+    color: var(--accent-purple);
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-gold);
+    margin-top: 0;
+}
+
+.adventure-section {
+    margin-bottom: 1.5rem;
+}
+
+.adventure-section h4 {
+    color: var(--accent-purple);
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: rgba(75, 0, 130, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.story-link {
+    background: none;
+    border: 2px solid transparent;
+    color: var(--text-primary);
+    padding: 0.5rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.story-link:hover {
+    border-color: var(--accent-gold);
+    background: rgba(75, 0, 130, 0.1);
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 270px;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.story-card {
+    background: white;
+    border: 3px solid var(--accent-gold);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(75, 0, 130, 0.1);
+}
+
+.story-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.story-header h1 {
+    color: var(--accent-purple);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Character Template Styles */
+.character-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.character-image {
+    margin: 2rem auto;
+    max-width: 400px;
+}
+
+.teddy-art {
+    width: 100%;
+    height: auto;
+    border: 3px solid var(--accent-gold);
+    border-radius: 8px;
+}
+
+.character-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(75, 0, 130, 0.05);
+    border-radius: 8px;
+}
+
+.skills-list {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid var(--accent-gold);
+}
+
+.skill-rating {
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+}
+
+/* Story Template Styles */
+.story-meta {
+    font-style: italic;
+    color: var(--accent-purple);
+    margin: 1rem 0;
+}
+
+.story-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(75, 0, 130, 0.05);
+    border-radius: 8px;
+}
+
+.npc-list, .highlight-list {
+    list-style: none;
+    padding: 0;
+}
+
+.npc-list li, .highlight-list li {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid var(--accent-gold);
+}
+
+/* Add these to your existing responsive styles */
+@media (max-width: 768px) {
+    .skill-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .side-nav {
+        position: static;
+        width: auto;
+        border-right: none;
+        border-bottom: 3px solid var(--accent-gold);
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 60px;
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
