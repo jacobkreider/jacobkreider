@@ -1,269 +1,269 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;700&family=VT323&display=swap');
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Base styles */
-body {
-    background-color: #f0f8ff;
-    font-family: 'M PLUS 1 Code', monospace;
-    line-height: 1.6;
-    color: #333;
-}
-
-#container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Navigation */
-#navbar {
-    background-color: #5F9EA0;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-}
-
-#navbar ul {
-    display: flex;
-    padding: 1rem;
-    margin: 0;
-    list-style: none;
-    justify-content: space-around;
-}
-
-#navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.8rem 1.2rem;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
-
-#navbar a:hover {
-    background-color: #FF69B4;
-}
-
-/* Layout */
-.main-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.left-column, .right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* General section styles */
-.section {
-    border-radius: 10px;
-    padding: 2rem;
-    transition: transform 0.3s;
-}
-
-.section:hover {
-    transform: translateY(-5px);
-}
-
-.section h2 {
-    margin-bottom: 1rem;
-}
-
-.section-link {
-    display: inline-block;
-    text-decoration: none;
-    padding: 0.8rem 1.2rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-    font-weight: bold;
-}
-
-/* Welcome section */
-.section-intro {
-    background-color: #40E0D0;
-    border: 3px solid #FF69B4;
-    color: white;
-}
-
-.section-intro h2 {
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-/* Guestbook section */
-.section-guestbook {
-    background-color: #40E0D0;
-    border: 3px solid #FF69B4;
-    color: white;
-}
-
-.section-guestbook h2 {
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-/* madp0e7ix section */
-.section-madp0e7ix {
-    background: #000;
-    color: #33ff33;
-    font-family: 'VT323', monospace;
-    border: 3px solid #00ff00;
-}
-
-.section-madp0e7ix h2,
-.section-madp0e7ix p {
-    font-family: 'VT323', monospace;
-}
-
-.section-madp0e7ix .section-link {
-    background: rgba(0, 255, 0, 0.2);
-    color: #33ff33;
-    border: 1px solid #00ff00;
-}
-
-.section-madp0e7ix .section-link:hover {
-    background: rgba(0, 255, 0, 0.3);
-}
-
-/* Teddy's Gallery section */
-.section-teddy {
-    background: #FFE5E5;
-    border: 3px solid #FF6B6B;
-    color: #4F4F4F;
-}
-
-.section-teddy h2 {
-    color: #FF6B6B;
-    text-shadow: 2px 2px 0px #FFD93D;
-}
-
-.section-teddy .section-link {
-    background: #FF6B6B;
-    color: white;
-}
-
-.section-teddy .section-link:hover {
-    background: #ff8282;
-}
-
-/* Baking section */
-.section-baking {
-    background: #FAEDCD;
-    border: 3px solid #D4A373;
-    color: #2C1810;
-}
-
-.section-baking .section-link {
-    background: #D4A373;
-    color: white;
-}
-
-.section-baking .section-link:hover {
-    background: #e0b088;
-}
-
-/* Guestbook components */
-.entry-form {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    background: white;
-    padding: 1rem;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    border: 1px solid rgba(255,255,255,0.2);
-}
-
-.entry-form input,
-.entry-form textarea {
-    padding: 0.5rem;
-    border: 1px solid #40E0D0;
-    border-radius: 3px;
-    width: 100%;
-    font-family: inherit;
-}
-
-.entry-form textarea {
-    grid-column: span 3;
-    height: 60px;
-    resize: vertical;
-}
-
-.entry-form button {
-    grid-column: span 3;
-    background: #FF69B4;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-family: inherit;
-}
-
-.entry-form button:hover {
-    background: #ff85c2;
-}
-
-.entries-container {
-    background: white;
-    border-radius: 5px;
-    padding: 1rem;
-    max-height: 300px;
-    overflow-y: auto;
-    border: 1px solid rgba(255,255,255,0.2);
-}
-
-/* Footer */
-footer {
-    margin-top: 2rem;
-    text-align: center;
-    color: #666;
-}
-
-/* Media queries */
-@media (max-width: 768px) {
-    #container {
-        padding: 1rem;
-    }
-
-    .main-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    #navbar ul {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .section {
-        padding: 1.5rem;
-    }
-    
-    .entry-form {
-        grid-template-columns: 1fr;
-    }
-    
-    .entry-form textarea,
-    .entry-form button {
-        grid-column: span 1;
-    }
-}
-
-@media (max-width: 480px) {
-    #container {
-        padding: 0.5rem;
-    }
-
-    .section {
-        padding: 1rem;
-    }
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;700&family=VT323&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+    background-color: #f0f8ff;
+    font-family: 'M PLUS 1 Code', monospace;
+    line-height: 1.6;
+    color: #333;
+}
+
+#container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Navigation */
+#navbar {
+    background-color: #5F9EA0;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 1rem;
+    margin: 0;
+    list-style: none;
+    justify-content: space-around;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+#navbar a:hover {
+    background-color: #FF69B4;
+}
+
+/* Layout */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* General section styles */
+.section {
+    border-radius: 10px;
+    padding: 2rem;
+    transition: transform 0.3s;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+.section h2 {
+    margin-bottom: 1rem;
+}
+
+.section-link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/* Welcome section */
+.section-intro {
+    background-color: #40E0D0;
+    border: 3px solid #FF69B4;
+    color: white;
+}
+
+.section-intro h2 {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Guestbook section */
+.section-guestbook {
+    background-color: #40E0D0;
+    border: 3px solid #FF69B4;
+    color: white;
+}
+
+.section-guestbook h2 {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* madp0e7ix section */
+.section-madp0e7ix {
+    background: #000;
+    color: #33ff33;
+    font-family: 'VT323', monospace;
+    border: 3px solid #00ff00;
+}
+
+.section-madp0e7ix h2,
+.section-madp0e7ix p {
+    font-family: 'VT323', monospace;
+}
+
+.section-madp0e7ix .section-link {
+    background: rgba(0, 255, 0, 0.2);
+    color: #33ff33;
+    border: 1px solid #00ff00;
+}
+
+.section-madp0e7ix .section-link:hover {
+    background: rgba(0, 255, 0, 0.3);
+}
+
+/* Teddy's Gallery section */
+.section-teddy {
+    background: #FFE5E5;
+    border: 3px solid #FF6B6B;
+    color: #4F4F4F;
+}
+
+.section-teddy h2 {
+    color: #FF6B6B;
+    text-shadow: 2px 2px 0px #FFD93D;
+}
+
+.section-teddy .section-link {
+    background: #FF6B6B;
+    color: white;
+}
+
+.section-teddy .section-link:hover {
+    background: #ff8282;
+}
+
+/* Baking section */
+.section-baking {
+    background: #FAEDCD;
+    border: 3px solid #D4A373;
+    color: #2C1810;
+}
+
+.section-baking .section-link {
+    background: #D4A373;
+    color: white;
+}
+
+.section-baking .section-link:hover {
+    background: #e0b088;
+}
+
+/* Guestbook components */
+.entry-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.entry-form input,
+.entry-form textarea {
+    padding: 0.5rem;
+    border: 1px solid #40E0D0;
+    border-radius: 3px;
+    width: 100%;
+    font-family: inherit;
+}
+
+.entry-form textarea {
+    grid-column: span 3;
+    height: 60px;
+    resize: vertical;
+}
+
+.entry-form button {
+    grid-column: span 3;
+    background: #FF69B4;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.entry-form button:hover {
+    background: #ff85c2;
+}
+
+.entries-container {
+    background: white;
+    border-radius: 5px;
+    padding: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: #666;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    #container {
+        padding: 1rem;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .section {
+        padding: 1.5rem;
+    }
+    
+    .entry-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .entry-form textarea,
+    .entry-form button {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 480px) {
+    #container {
+        padding: 0.5rem;
+    }
+
+    .section {
+        padding: 1rem;
+    }
 }
