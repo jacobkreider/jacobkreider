@@ -54,6 +54,9 @@
                   4. replace "developing" with the YYYY-MM it was shot, and fill in the frame count
                 For a new roll, copy a whole <li> to the top of the list.
 
+                Rolls 01-07 are numbered by lab scan date (each tile notes its lab order number,
+                the first 8 digits of the scan filenames). Stocks and frame counts are TBD.
+
                 A finished tile looks like:
                 <li>
                     <a class="roll-tile" href="film/roll-01.html">
@@ -65,26 +68,65 @@
                 -->
                 <ul class="roll-grid">
                     <li>
+                        <!-- lab order 00837266 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 07</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-09 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- lab order 00827126 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 06</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-08 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- lab order 00817126 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 05</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-08 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- lab order 00937747 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 04</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-08 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- lab order 00927687 -->
                         <a class="roll-tile is-disabled" aria-disabled="true">
                             <span class="roll-number">ROLL 03</span>
-                            <span class="roll-stock">Portra 400</span>
-                            <span class="roll-meta">developing · &ndash; frames</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-07 · frames TBD</span>
                             <span class="roll-badge">coming soon</span>
                         </a>
                     </li>
                     <li>
+                        <!-- lab order 00917687 -->
                         <a class="roll-tile is-disabled" aria-disabled="true">
                             <span class="roll-number">ROLL 02</span>
-                            <span class="roll-stock">Ektar 100</span>
-                            <span class="roll-meta">developing · &ndash; frames</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-07 · frames TBD</span>
                             <span class="roll-badge">coming soon</span>
                         </a>
                     </li>
                     <li>
+                        <!-- lab order 00822144 -->
                         <a class="roll-tile is-disabled" aria-disabled="true">
                             <span class="roll-number">ROLL 01</span>
-                            <span class="roll-stock">Gold 200</span>
-                            <span class="roll-meta">developing · &ndash; frames</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-03 · frames TBD</span>
                             <span class="roll-badge">coming soon</span>
                         </a>
                     </li>
@@ -107,7 +149,8 @@
                       - photo-caption (required): film stock · YYYY-MM. Only if it wasn't shot on
                         the Pentax 17, add the camera: Kodak Portra 400 · 2026-10 · Pentax K1000
                       - photo-title and photo-note are optional; delete the line if unused
-                    For a photo shot in landscape orientation, use class="photo-card landscape".
+                    For a photo shot in landscape orientation, use class="photo-card landscape";
+                    for a square crop, class="photo-card square".
 
                     <figure class="photo-card">
                         <a class="photo-link" href="film_photos/full/NAME.jpg">
@@ -123,38 +166,472 @@
                     -->
 
                     <figure class="photo-card">
-                        <a class="photo-link" href="film_photos/full/placeholder-01.jpg">
-                            <img src="film_photos/thumbs/placeholder-01.jpg" alt="Placeholder 1: a plain charcoal frame with the word PLACEHOLDER" loading="lazy" width="440" height="587">
+                        <a class="photo-link" href="film_photos/full/008372660002-2.jpg">
+                            <img src="film_photos/thumbs/008372660002-2.jpg" alt="A stone Victorian building with a pointed tower and a banner flag, in black and white" loading="lazy" width="440" height="624">
                         </a>
                         <figcaption>
-                            <span class="frame-label">ROLL 01 · 01A</span>
-                            <h3 class="photo-title">Placeholder 1</h3>
-                            <p class="photo-caption">Kodak Gold 200 · 2026-10</p>
-                            <p class="photo-note">Placeholder image so the page can be reviewed. Real photos will replace it once the first roll is back.</p>
+                            <span class="frame-label">ROLL 07 · 2</span>
+                            <p class="photo-caption">Film stock TBD · 2026-09</p>
                         </figcaption>
                     </figure>
 
                     <figure class="photo-card">
-                        <a class="photo-link" href="film_photos/full/placeholder-02.jpg">
-                            <img src="film_photos/thumbs/placeholder-02.jpg" alt="Placeholder 2: a plain charcoal frame with the word PLACEHOLDER" loading="lazy" width="440" height="587">
+                        <a class="photo-link" href="film_photos/full/008372660003-2.jpg">
+                            <img src="film_photos/thumbs/008372660003-2.jpg" alt="A child eating ice cream at a crowded street fair, in black and white" loading="lazy" width="440" height="585">
                         </a>
                         <figcaption>
-                            <span class="frame-label">ROLL 01 · 01B</span>
-                            <h3 class="photo-title">Placeholder 2</h3>
-                            <p class="photo-caption">Kodak Gold 200 · 2026-10</p>
-                            <p class="photo-note">Placeholder image so the page can be reviewed. Real photos will replace it once the first roll is back.</p>
+                            <span class="frame-label">ROLL 07 · 3</span>
+                            <p class="photo-caption">Film stock TBD · 2026-09</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/008372660006-2.jpg">
+                            <img src="film_photos/thumbs/008372660006-2.jpg" alt="People walking across an iron truss footbridge, in black and white" loading="lazy" width="440" height="454">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 07 · 6</span>
+                            <p class="photo-caption">Film stock TBD · 2026-09</p>
                         </figcaption>
                     </figure>
 
                     <figure class="photo-card">
-                        <a class="photo-link" href="film_photos/full/placeholder-03.jpg">
-                            <img src="film_photos/thumbs/placeholder-03.jpg" alt="Placeholder 3: a plain charcoal frame with the word PLACEHOLDER" loading="lazy" width="440" height="587">
+                        <a class="photo-link" href="film_photos/full/008372660007-3.jpg">
+                            <img src="film_photos/thumbs/008372660007-3.jpg" alt="A child playing a Nitro Trucks arcade racing game, in black and white" loading="lazy" width="440" height="550">
                         </a>
                         <figcaption>
-                            <span class="frame-label">ROLL 01 · 02A</span>
-                            <h3 class="photo-title">Placeholder 3</h3>
-                            <p class="photo-caption">Kodak Gold 200 · 2026-10</p>
-                            <p class="photo-note">Placeholder image so the page can be reviewed. Real photos will replace it once the first roll is back.</p>
+                            <span class="frame-label">ROLL 07 · 7</span>
+                            <p class="photo-caption">Film stock TBD · 2026-09</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008372660043-2.jpg">
+                            <img src="film_photos/thumbs/008372660043-2.jpg" alt="A child drawing at a desk in a living room, in black and white" loading="lazy" width="440" height="651">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 07 · 43</span>
+                            <p class="photo-caption">Film stock TBD · 2026-09</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008372660050-2.jpg">
+                            <img src="film_photos/thumbs/008372660050-2.jpg" alt="A child in a hat pointing while another child looks on, in black and white" loading="lazy" width="440" height="549">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 07 · 50</span>
+                            <p class="photo-caption">Film stock TBD · 2026-09</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008372660053-2.jpg">
+                            <img src="film_photos/thumbs/008372660053-2.jpg" alt="Two children sitting on a stone bench by a fireplace with a wreath, in black and white" loading="lazy" width="440" height="577">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 07 · 53</span>
+                            <p class="photo-caption">Film stock TBD · 2026-09</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008372660060-2.jpg">
+                            <img src="film_photos/thumbs/008372660060-2.jpg" alt="A lake at dusk framed by silhouetted trees, in black and white" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 07 · 60</span>
+                            <p class="photo-caption">Film stock TBD · 2026-09</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/008372660067-2.jpg">
+                            <img src="film_photos/thumbs/008372660067-2.jpg" alt="A stone building with a small round turret, in black and white" loading="lazy" width="440" height="440">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 07 · 67</span>
+                            <p class="photo-caption">Film stock TBD · 2026-09</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008271260022.jpg">
+                            <img src="film_photos/thumbs/008271260022.jpg" alt="An adult and two children in kayaks rafted together on a lake" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 06 · 22</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008271260023-2.jpg">
+                            <img src="film_photos/thumbs/008271260023-2.jpg" alt="An adult and a child in life jackets sharing an orange kayak" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 06 · 23</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008271260024-2.jpg">
+                            <img src="film_photos/thumbs/008271260024-2.jpg" alt="An adult and a child paddling an orange kayak on a lake" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 06 · 24</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/008271260028-2.jpg">
+                            <img src="film_photos/thumbs/008271260028-2.jpg" alt="A child in a life jacket gripping a paddle in a yellow kayak" loading="lazy" width="440" height="429">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 06 · 28</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008271260040-2.jpg">
+                            <img src="film_photos/thumbs/008271260040-2.jpg" alt="A child paddling a yellow kayak across a calm lake" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 06 · 40</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008271260072-2.jpg">
+                            <img src="film_photos/thumbs/008271260072-2.jpg" alt="Three kayakers paddling out across a lake under summer clouds" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 06 · 72</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008171260022-2.jpg">
+                            <img src="film_photos/thumbs/008171260022-2.jpg" alt="A dog standing on a grassy lakeshore beside a yellow kayak" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 05 · 22</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008171260040-2.jpg">
+                            <img src="film_photos/thumbs/008171260040-2.jpg" alt="A child in a pink shirt holding a long kayak paddle on a gravel path" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 05 · 40</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008171260055-2.jpg">
+                            <img src="film_photos/thumbs/008171260055-2.jpg" alt="A child in sunglasses balancing along the edge of a road" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 05 · 55</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/008171260059-2.jpg">
+                            <img src="film_photos/thumbs/008171260059-2.jpg" alt="Pink hibiscus blossoms with a bee in one of the flowers" loading="lazy" width="440" height="440">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 05 · 59</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/008171260063-2.jpg">
+                            <img src="film_photos/thumbs/008171260063-2.jpg" alt="A child sitting on a bench swing inside a large white ring" loading="lazy" width="440" height="440">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 05 · 63</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008171260067-2.jpg">
+                            <img src="film_photos/thumbs/008171260067-2.jpg" alt="Rows of orange, red and black painted paper fans" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 05 · 67</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009377470028-2.jpg">
+                            <img src="film_photos/thumbs/009377470028-2.jpg" alt="A child at the wheel of a pink and teal Funland kiddie truck ride" loading="lazy" width="440" height="500">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 04 · 28</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/009377470040-2.jpg">
+                            <img src="film_photos/thumbs/009377470040-2.jpg" alt="People strolling down a wide wooden boardwalk on a clear day" loading="lazy" width="440" height="440">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 04 · 40</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009377470050-2.jpg">
+                            <img src="film_photos/thumbs/009377470050-2.jpg" alt="A western-style storefront with Cowboy Store and Leather Shop signs" loading="lazy" width="440" height="485">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 04 · 50</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/009377470066-2.jpg">
+                            <img src="film_photos/thumbs/009377470066-2.jpg" alt="A child walking along a curb beside a tree-lined park road" loading="lazy" width="440" height="440">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 04 · 66</span>
+                            <p class="photo-caption">Film stock TBD · 2026-08</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009276870003-2.jpg">
+                            <img src="film_photos/thumbs/009276870003-2.jpg" alt="A painted mural of an old map on the side of a wooden building" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 3</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009276870021-2.jpg">
+                            <img src="film_photos/thumbs/009276870021-2.jpg" alt="A yellow Union Square sign lit by lamps in a dark station" loading="lazy" width="440" height="550">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 21</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card landscape">
+                        <a class="photo-link" href="film_photos/full/009276870022-2.jpg">
+                            <img src="film_photos/thumbs/009276870022-2.jpg" alt="Large black Chinese characters on a yellow wall under a lamp" loading="lazy" width="440" height="326">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 22</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009276870023-2.jpg">
+                            <img src="film_photos/thumbs/009276870023-2.jpg" alt="A city street corner at Jackson Street with a cyclist crossing" loading="lazy" width="440" height="488">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 23</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009276870029-2.jpg">
+                            <img src="film_photos/thumbs/009276870029-2.jpg" alt="A painted utility box beside a One Way sign on a city sidewalk" loading="lazy" width="440" height="662">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 29</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009276870031-2.jpg">
+                            <img src="film_photos/thumbs/009276870031-2.jpg" alt="A tall pointed skyscraper and a green flatiron building at a city intersection" loading="lazy" width="440" height="543">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 31</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/009276870035-2.jpg">
+                            <img src="film_photos/thumbs/009276870035-2.jpg" alt="A large metal crab sculpture above a flower bed by the waterfront" loading="lazy" width="440" height="440">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 35</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009276870053-3.jpg">
+                            <img src="film_photos/thumbs/009276870053-3.jpg" alt="A minor league baseball game seen from behind home plate on a sunny day" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 53</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009276870065-2.jpg">
+                            <img src="film_photos/thumbs/009276870065-2.jpg" alt="A painted moth inside a wooden frame standing in a park" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 65</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009276870069-2.jpg">
+                            <img src="film_photos/thumbs/009276870069-2.jpg" alt="A glass gumball machine full of pastel gumballs" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 69</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009276870071-2.jpg">
+                            <img src="film_photos/thumbs/009276870071-2.jpg" alt="Red and gold Christmas ornaments hanging from a tree" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 03 · 71</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009176870002-2.jpg">
+                            <img src="film_photos/thumbs/009176870002-2.jpg" alt="A garden gnome holding a sunflower, lit in warm orange light" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 02 · 2</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009176870012-2.jpg">
+                            <img src="film_photos/thumbs/009176870012-2.jpg" alt="A black and white dog sitting on a lawn in front of a wooden playhouse" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 02 · 12</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/009176870018-2.jpg">
+                            <img src="film_photos/thumbs/009176870018-2.jpg" alt="Two children sitting on a wooden bench with a wrought-iron back" loading="lazy" width="440" height="440">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 02 · 18</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009176870021-3.jpg">
+                            <img src="film_photos/thumbs/009176870021-3.jpg" alt="A family group crouched together in a backyard, two children in front" loading="lazy" width="440" height="587">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 02 · 21</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/009176870028-4.jpg">
+                            <img src="film_photos/thumbs/009176870028-4.jpg" alt="A large family group standing on the front steps of a brick house" loading="lazy" width="440" height="441">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 02 · 28</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/009176870052-2.jpg">
+                            <img src="film_photos/thumbs/009176870052-2.jpg" alt="A toddler in a striped hoodie walking across a lawn past a red wagon and toy cars" loading="lazy" width="440" height="440">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 02 · 52</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009176870055-2.jpg">
+                            <img src="film_photos/thumbs/009176870055-2.jpg" alt="A smiling child holding up a slice of watermelon at a backyard party" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 02 · 55</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009176870056-2.jpg">
+                            <img src="film_photos/thumbs/009176870056-2.jpg" alt="A child grinning and holding a slice of watermelon, guests behind him" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 02 · 56</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/009176870057.jpg">
+                            <img src="film_photos/thumbs/009176870057.jpg" alt="A child in an elf hat lying in the grass beside newly planted seedlings" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 02 · 57</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card square">
+                        <a class="photo-link" href="film_photos/full/009176870066-2.jpg">
+                            <img src="film_photos/thumbs/009176870066-2.jpg" alt="A metal butterfly cutout with an orange wing among white branch sculptures" loading="lazy" width="440" height="440">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 02 · 66</span>
+                            <p class="photo-caption">Film stock TBD · 2026-07</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/008221440057-2.jpg">
+                            <img src="film_photos/thumbs/008221440057-2.jpg" alt="Palm trees leaning over a beach under a blue sky with drifting clouds" loading="lazy" width="440" height="624">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 01 · 57</span>
+                            <p class="photo-caption">Film stock TBD · 2026-03</p>
                         </figcaption>
                     </figure>
                 </div>

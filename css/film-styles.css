@@ -302,6 +302,11 @@ a.roll-tile[href]:focus-visible {
     aspect-ratio: 4 / 3;
 }
 
+/* A square crop */
+.photo-card.square .photo-link img {
+    aspect-ratio: 1 / 1;
+}
+
 .photo-card figcaption {
     padding-top: 0.6rem;
 }
@@ -395,7 +400,7 @@ html.lightbox-open {
 }
 
 /* Wide, short windows: caption beside the photo so it never pushes it off screen */
-@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+@media (min-width: 900px) and (min-aspect-ratio: 4/3), (min-width: 600px) and (min-aspect-ratio: 3/2) {
     .lightbox-stage {
         flex-direction: row;
         gap: 2rem;

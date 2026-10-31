@@ -11,6 +11,9 @@ For every new image in the zip this writes a resized full-size JPEG to
 film_photos/full/ and a thumbnail to film_photos/thumbs/, and records the
 entry in film_photos/manifest.json so it is never processed twice.
 
+Entries listed under "skip" in film_photos/import-options.json are left out
+(e.g. a raw scan that already has an edited copy in the zip).
+
 It never modifies the zip, never edits HTML, and writes only under
 film_photos/. Resizing needs ImageMagick (`magick`, or `convert` on older
 installs).
@@ -35,6 +38,7 @@ PHOTOS_DIR = REPO_ROOT / "film_photos"
 FULL_DIR = PHOTOS_DIR / "full"
 THUMBS_DIR = PHOTOS_DIR / "thumbs"
 MANIFEST_PATH = PHOTOS_DIR / "manifest.json"
+OPTIONS_PATH = PHOTOS_DIR / "import-options.json"
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".heic", ".heif"}
 
@@ -95,6 +99,14 @@ def load_manifest():
         manifest = json.load(f)
     manifest.setdefault("zips", {})
     return manifest
+
+
+def load_skip_list(zip_key):
+    """Zip entries never to import, from the hand-edited import-options.json."""
+    if not OPTIONS_PATH.exists():
+        return set()
+    with open(OPTIONS_PATH, encoding="utf-8") as f:
+        return set(json.load(f).get(zip_key, {}).get("skip", []))
 
 
 def save_manifest(manifest):
@@ -178,6 +190,7 @@ def main():
     manifest = load_manifest()
     zip_key = zip_path.name
     known = manifest["zips"].setdefault(zip_key, {})
+    skip = load_skip_list(zip_key)
 
     # Names already claimed by any entry (from any zip) or by a file on disk.
     taken = {rec["name"] for recs in manifest["zips"].values() for rec in recs.values()}
@@ -191,6 +204,8 @@ def main():
         entries = sorted((i for i in zf.infolist() if is_importable(i)),
                          key=lambda i: i.filename)
         in_zip = {i.filename for i in entries}
+        excluded = sorted(i.filename for i in entries if i.filename in skip)
+        entries = [i for i in entries if i.filename not in skip]
 
         with tempfile.TemporaryDirectory(prefix="add-photos-") as tmp:
             workdir = Path(tmp)
@@ -223,10 +238,13 @@ def main():
                 bucket.append((info.filename, name))
 
     missing = sorted(set(known) - in_zip)
+    unmatched = sorted(skip - in_zip)
 
     prefix = "[dry run] would process: " if args.dry_run else ""
     summary = (f"{prefix}{len(new)} new, {skipped} skipped, {len(changed)} changed, "
                f"{len(missing)} missing from zip")
+    if excluded:
+        summary += f", {len(excluded)} excluded by import-options.json"
     if regenerated:
         summary += f", {len(regenerated)} regenerated (output files were missing)"
     if failed:
@@ -240,6 +258,11 @@ def main():
     for entry in missing:
         print(f"  no longer in zip (left in place; delete by hand if unwanted): "
               f"{entry} -> {known[entry]['name']}.jpg")
+    for entry in excluded:
+        if entry in known:
+            print(f"  excluded but imported earlier (files left in place): {entry}")
+    for entry in unmatched:
+        print(f"  import-options.json skips an entry that isn't in the zip: {entry}")
     for entry, message in failed:
         print(f"  FAILED: {entry}: {message or 'ImageMagick error'}")
 
