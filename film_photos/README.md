@@ -9,6 +9,7 @@ film_photos/
 ├── full/           full-size JPEGs (~1800 px on the long side, quality 82), loaded only in the lightbox
 ├── thumbs/         thumbnails (440 px wide, quality 80), loaded by the grids
 ├── manifest.json   record of what tools/add-photos.py has imported (don't edit by hand)
+├── import-options.json   zip entries to skip on import (edit by hand)
 └── README.md       this file
 ```
 
@@ -28,6 +29,24 @@ each zip it imports from, it maps every zip entry name to:
 
 It is committed to git. **Don't edit it by hand.** To re-import a photo from scratch, delete
 its two JPEGs; the script regenerates missing files on the next run.
+
+## import-options.json
+
+Hand-edited, per zip. `skip` lists zip entries never to import, for example a raw scan that
+already has an edited copy (`~2`) in the zip:
+
+```json
+{
+  "2026_Favorite_Film.zip": {
+    "skip": ["2026 Favorite Film/009377470028.jpg"]
+  }
+}
+```
+
+Adding an already-imported entry to `skip` leaves its files in place; delete them by hand.
+Removing an entry from `skip` imports it on the next run. Photos are turned upright from
+their EXIF orientation automatically, so a scan that looks sideways in some viewers is
+usually fine.
 
 ## Adding photos
 
@@ -58,6 +77,7 @@ What the script does on each run:
   delete them by hand (and remove its card from the page)
 - if a known entry's output files are missing, they are **regenerated**
 - two entries that would get the same name get `-2`, `-3`, … appended
+- entries in `import-options.json`'s `skip` list are left out
 
 It never modifies the zip or anything else in `~/Downloads`, and never edits HTML.
 
