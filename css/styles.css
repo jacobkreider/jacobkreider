@@ -146,6 +146,27 @@ body {
     background: rgba(0, 255, 0, 0.3);
 }
 
+/* Film Photography section */
+.section-film {
+    background: #262320;
+    border: 3px solid #e8a33d;
+    color: #ece6da;
+}
+
+.section-film h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.section-film .section-link {
+    background: #e8a33d;
+    color: #1d1b19;
+}
+
+.section-film .section-link:hover {
+    background: #f0b65e;
+}
+
 /* Teddy's Gallery section */
 .section-teddy {
     background: #FFE5E5;
