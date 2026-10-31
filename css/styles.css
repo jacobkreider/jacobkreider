@@ -49,17 +49,21 @@ body {
     background-color: #FF69B4;
 }
 
-/* Layout */
+/* Layout: rows, not columns, so no column runs short and leaves a gap.
+   The column wrappers drop out of the layout and their sections join the grid:
+   intro across the top, the cards three across, guestbook across the bottom. */
 .main-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
 }
 
 .left-column, .right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    display: contents;
+}
+
+.section-intro {
+    grid-column: 1 / -1;
 }
 
 /* General section styles */
