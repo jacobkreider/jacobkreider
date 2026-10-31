@@ -1,15 +1,21 @@
 /* film-styles.css
-   Film Photography gallery: a contact sheet under darkroom light.
-   Neutral charcoal so the photos carry the colour; amber is the only accent. */
+   Film Photography gallery: a drugstore photo envelope.
+   Cream paper and white prints, with red and yellow for fun. */
 
 :root {
-    --film-bg: #1d1b19;        /* page background, warm charcoal */
-    --film-surface: #262320;   /* cards and panels */
-    --film-line: #3a3530;      /* hairlines and borders */
-    --film-text: #ece6da;      /* body text, soft off-white */
-    --film-muted: #9a9387;     /* captions and metadata */
-    --film-amber: #e8a33d;     /* frame numbers, links, focus/hover rings */
-    --film-mat: #ece6da;       /* the thin print border around thumbnails */
+    --film-bg: #fbf3e4;        /* page background, envelope cream */
+    --film-surface: #ffffff;   /* cards: white prints */
+    --film-line: #eadfcb;      /* hairlines and borders */
+    --film-text: #2b2420;      /* body text, warm near-black */
+    --film-muted: #6b5d50;     /* captions and metadata */
+    --film-accent: #c0392b;    /* frame numbers, links, focus/hover rings */
+    --film-yellow: #f5b700;    /* decoration only (sprocket strip); too light for text */
+    --film-mat: #ffffff;       /* the print border around thumbnails */
+
+    /* the lightbox stays dark so photos pop */
+    --lightbox-text: #f3ede2;
+    --lightbox-muted: #c2b8a8;
+    --lightbox-accent: #f5b700;
 
     --font-serif: "DM Serif Display", Georgia, serif;
     --font-sans: "DM Sans", system-ui, sans-serif;
@@ -40,12 +46,12 @@ img {
 }
 
 a {
-    color: var(--film-amber);
+    color: var(--film-accent);
 }
 
 a:focus-visible,
 button:focus-visible {
-    outline: 2px solid var(--film-amber);
+    outline: 2px solid var(--film-accent);
     outline-offset: 3px;
 }
 
@@ -55,7 +61,7 @@ button:focus-visible {
     top: -3rem;
     padding: 0.5rem 1rem;
     background: var(--film-surface);
-    color: var(--film-amber);
+    color: var(--film-accent);
     z-index: 10;
 }
 
@@ -94,12 +100,12 @@ button:focus-visible {
 }
 
 .film-nav a:hover {
-    color: var(--film-amber);
+    color: var(--film-accent);
 }
 
 .film-nav a[aria-current="page"] {
-    color: var(--film-amber);
-    border-bottom-color: var(--film-amber);
+    color: var(--film-accent);
+    border-bottom-color: var(--film-accent);
 }
 
 /* Header */
@@ -141,8 +147,8 @@ button:focus-visible {
     margin: 0 0 2.5rem;
     background:
         radial-gradient(circle, var(--film-bg) 3.5px, transparent 4px) 0 50% / 22px 18px repeat-x,
-        var(--film-surface);
-    border-block: 1px solid var(--film-line);
+        var(--film-yellow);
+    border-radius: 3px;
 }
 
 /* Sections */
@@ -247,7 +253,7 @@ button:focus-visible {
 
 .frame-label,
 .roll-number {
-    color: var(--film-amber);
+    color: var(--film-accent);
 }
 
 .frame-label a {
@@ -281,7 +287,7 @@ button:focus-visible {
 a.roll-tile[href]:hover,
 a.roll-tile[href]:focus-visible {
     transform: translateY(-3px);
-    box-shadow: 0 0 0 2px var(--film-amber);
+    box-shadow: 0 0 0 2px var(--film-accent);
     outline: none;
 }
 
@@ -327,6 +333,7 @@ a.roll-tile[href]:focus-visible {
     background: var(--film-surface);
     border: 1px solid var(--film-line);
     border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(43, 36, 32, 0.08);
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -334,13 +341,14 @@ a.roll-tile[href]:focus-visible {
 .photo-card:hover,
 .photo-card:focus-within {
     transform: translateY(-3px);
-    box-shadow: 0 0 0 2px var(--film-amber);
+    box-shadow: 0 0 0 2px var(--film-accent);
 }
 
 .photo-link {
     display: block;
     padding: 4px;               /* thin print mat */
     background: var(--film-mat);
+    border: 1px solid var(--film-line);
 }
 
 .photo-link:focus-visible {
@@ -406,7 +414,7 @@ a.roll-tile[href]:focus-visible {
     padding: 0;
     border: none;
     background: rgba(15, 14, 13, 0.96);
-    color: var(--film-text);
+    color: var(--lightbox-text);
 }
 
 .lightbox::backdrop {
@@ -457,6 +465,14 @@ html.lightbox-open {
     font-size: 1.3rem;
 }
 
+.lightbox-details .frame-label {
+    color: var(--lightbox-accent);
+}
+
+.lightbox-details .photo-caption {
+    color: var(--lightbox-muted);
+}
+
 .lightbox-details > :empty {
     display: none;
 }
@@ -491,15 +507,19 @@ html.lightbox-open {
     background: transparent;
     border: 1px solid transparent;
     border-radius: 50%;
-    color: var(--film-amber);
+    color: var(--lightbox-accent);
     font-family: var(--font-sans);
     font-size: 2rem;
     line-height: 1;
     cursor: pointer;
 }
 
+.lightbox button:focus-visible {
+    outline-color: var(--lightbox-accent);
+}
+
 .lightbox-button:hover {
-    border-color: var(--film-amber);
+    border-color: var(--lightbox-accent);
 }
 
 .lightbox-close {
