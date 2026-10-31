@@ -15,9 +15,8 @@ film_photos/
 
 Only these resized copies go in git. Never commit original scans or camera files.
 
-`placeholder-01.jpg` to `placeholder-03.jpg` (in both `full/` and `thumbs/`) are the
-charcoal "PLACEHOLDER" frames used by the three sample cards on `film.html`. Delete them
-along with those cards once real photos are on the page.
+`placeholder-01.jpg` (in both `full/` and `thumbs/`) is the charcoal "PLACEHOLDER" frame
+used by the sample card in `film/roll-template.html`. Keep it while the template uses it.
 
 ## manifest.json
 
