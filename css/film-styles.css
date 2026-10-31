@@ -180,8 +180,15 @@ button:focus-visible {
     align-items: start;
 }
 
+.film-favorites {
+    grid-column: 2;
+    grid-row: 1;
+}
+
 /* Stays in view while the gallery scrolls; scrolls itself if taller than the window */
 .film-rolls {
+    grid-column: 1;
+    grid-row: 1;
     position: sticky;
     top: 1.5rem;
     max-height: calc(100vh - 3rem);
@@ -538,6 +545,13 @@ html.lightbox-open {
     .film-layout {
         grid-template-columns: minmax(0, 1fr);
         gap: 0;
+    }
+
+    /* Page order: Favorites, then Rolls below */
+    .film-favorites,
+    .film-rolls {
+        grid-column: auto;
+        grid-row: auto;
     }
 
     .film-rolls {
