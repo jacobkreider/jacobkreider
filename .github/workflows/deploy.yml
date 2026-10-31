@@ -1,0 +1,37 @@
+name: Deploy to Neocities
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-neocities
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      # Copy only site files into dist/ so specs, scripts and drafts aren't uploaded
+      # (free Neocities accounts reject some file types). If a deploy fails on a
+      # file type, add an exclude here rather than uploading it.
+      - name: Stage site files
+        run: |
+          mkdir dist
+          rsync -a \
+            --exclude='.git*' --exclude='.github/' --exclude='.claude/' --exclude='dev/' \
+            --exclude='tools/' --exclude='dist/' --exclude='*.md' \
+            --exclude='*.py' --exclude='*.sh' \
+            ./ dist/
+
+      # cleanup stays false until the first deploy has been checked: true deletes
+      # everything on the live site that isn't in dist/, including hand uploads.
+      - name: Deploy to Neocities
+        uses: bcomnes/deploy-to-neocities@v3.0.6
+        with:
+          api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
+          dist_dir: dist
+          cleanup: false
