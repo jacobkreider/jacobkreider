@@ -330,10 +330,40 @@ footer {
     background: white;
 }
 
-/* Responsive adjustments */
+/* Guestbook spans both columns: form on the left, signatures on the right */
+.section-guestbook {
+    grid-column: 1 / -1;
+}
+
+.section-guestbook:hover {
+    transform: none;  /* no hover lift while someone is typing in it */
+}
+
+.guestbook-panels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.guestbook-panel h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-family: monospace;
+}
+
+/* Tall enough for Atabook's whole form (about 330px) */
+.guestbook-frame-container--form,
+.guestbook-frame-container--messages {
+    height: 360px;
+}
+
 @media (max-width: 768px) {
-    .guestbook-frame-container {
-        aspect-ratio: 1/1;  /* Square aspect ratio on mobile */
+    .guestbook-panels {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .guestbook-frame-container--messages {
+        height: 420px;
     }
 }
 
