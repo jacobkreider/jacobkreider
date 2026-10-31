@@ -11,16 +11,16 @@ function handleKeyPress(e) {
     const key = e.key || e.target.value;
     switch(key) {
         case '1':
-            location.href = '/madp0e7ix.html';
+            location.href = '/bbs.html';
             break;
         case '2':
-            location.href = '/madp0e7ix_bbs/learning.html';
+            location.href = '/bbs/learning.html';
             break;
         case '3':
-            location.href = 'https://madp0e7ix.neocities.org/madp0e7ix_bbs/thoughts.html';
+            location.href = 'https://madp0e7ix.neocities.org/bbs/thoughts.html';
             break;
         case '4':
-            location.href = '/madp0e7ix_bbs/projects.html';
+            location.href = '/bbs/projects.html';
             break;
         case '5':
             location.href = 'https://neocities.org/site/madp0e7ix';
