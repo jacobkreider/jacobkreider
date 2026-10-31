@@ -39,102 +39,9 @@
                 in its caption.</p>
             </section>
 
-            <!-- Rolls down the left, Favorites in the main space (stacked on narrow screens) -->
+            <!-- Favorites come first in the page; on wide screens CSS moves Rolls to a left sidebar.
+                 Narrow screens show Favorites, then Rolls below. -->
             <div class="film-layout">
-            <section class="film-section film-rolls" aria-labelledby="rolls-heading">
-                <h2 id="rolls-heading">Rolls</h2>
-                <!--
-                ROLL TILES, newest first.
-
-                A placeholder tile (roll not posted yet) has the is-disabled class,
-                aria-disabled="true", a "coming soon" badge, and NO href, so it can't 404.
-
-                When a roll's page is ready (film/roll-NN.html, copied from film/roll-template.html):
-                  1. add href="film/roll-NN.html" to its <a>
-                  2. remove class="is-disabled" (keep "roll-tile") and aria-disabled="true"
-                  3. delete the <span class="roll-badge">coming soon</span> line
-                  4. replace "developing" with the YYYY-MM it was shot, and fill in the frame count
-                For a new roll, copy a whole <li> to the top of the list.
-
-                Rolls 01-07 are numbered by lab scan date (each tile notes its lab order number,
-                the first 8 digits of the scan filenames). Stocks and frame counts are TBD.
-
-                A finished tile looks like:
-                <li>
-                    <a class="roll-tile" href="film/roll-01.html">
-                        <span class="roll-number">ROLL 01</span>
-                        <span class="roll-stock">Gold 200</span>
-                        <span class="roll-meta">2026-10 · 72 frames</span>
-                    </a>
-                </li>
-                -->
-                <ul class="roll-grid">
-                    <li>
-                        <!-- lab order 00837266 -->
-                        <a class="roll-tile is-disabled" aria-disabled="true">
-                            <span class="roll-number">ROLL 07</span>
-                            <span class="roll-stock">Film stock TBD</span>
-                            <span class="roll-meta">2026-09 · frames TBD</span>
-                            <span class="roll-badge">coming soon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- lab order 00827126 -->
-                        <a class="roll-tile is-disabled" aria-disabled="true">
-                            <span class="roll-number">ROLL 06</span>
-                            <span class="roll-stock">Film stock TBD</span>
-                            <span class="roll-meta">2026-08 · frames TBD</span>
-                            <span class="roll-badge">coming soon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- lab order 00817126 -->
-                        <a class="roll-tile is-disabled" aria-disabled="true">
-                            <span class="roll-number">ROLL 05</span>
-                            <span class="roll-stock">Film stock TBD</span>
-                            <span class="roll-meta">2026-08 · frames TBD</span>
-                            <span class="roll-badge">coming soon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- lab order 00937747 -->
-                        <a class="roll-tile is-disabled" aria-disabled="true">
-                            <span class="roll-number">ROLL 04</span>
-                            <span class="roll-stock">Film stock TBD</span>
-                            <span class="roll-meta">2026-08 · frames TBD</span>
-                            <span class="roll-badge">coming soon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- lab order 00927687 -->
-                        <a class="roll-tile is-disabled" aria-disabled="true">
-                            <span class="roll-number">ROLL 03</span>
-                            <span class="roll-stock">Film stock TBD</span>
-                            <span class="roll-meta">2026-07 · frames TBD</span>
-                            <span class="roll-badge">coming soon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- lab order 00917687 -->
-                        <a class="roll-tile is-disabled" aria-disabled="true">
-                            <span class="roll-number">ROLL 02</span>
-                            <span class="roll-stock">Film stock TBD</span>
-                            <span class="roll-meta">2026-07 · frames TBD</span>
-                            <span class="roll-badge">coming soon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- lab order 00822144 -->
-                        <a class="roll-tile is-disabled" aria-disabled="true">
-                            <span class="roll-number">ROLL 01</span>
-                            <span class="roll-stock">Film stock TBD</span>
-                            <span class="roll-meta">2026-03 · frames TBD</span>
-                            <span class="roll-badge">coming soon</span>
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
             <section class="film-section film-favorites" aria-labelledby="favorites-heading">
                 <h2 id="favorites-heading">Favorites</h2>
                 <div class="photo-grid" data-gallery>
@@ -635,6 +542,100 @@
                         </figcaption>
                     </figure>
                 </div>
+            </section>
+
+            <section class="film-section film-rolls" aria-labelledby="rolls-heading">
+                <h2 id="rolls-heading">Rolls</h2>
+                <!--
+                ROLL TILES, newest first.
+
+                A placeholder tile (roll not posted yet) has the is-disabled class,
+                aria-disabled="true", a "coming soon" badge, and NO href, so it can't 404.
+
+                When a roll's page is ready (film/roll-NN.html, copied from film/roll-template.html):
+                  1. add href="film/roll-NN.html" to its <a>
+                  2. remove class="is-disabled" (keep "roll-tile") and aria-disabled="true"
+                  3. delete the <span class="roll-badge">coming soon</span> line
+                  4. replace "developing" with the YYYY-MM it was shot, and fill in the frame count
+                For a new roll, copy a whole <li> to the top of the list.
+
+                Rolls 01-07 are numbered by lab scan date (each tile notes its lab order number,
+                the first 8 digits of the scan filenames). Stocks and frame counts are TBD.
+
+                A finished tile looks like:
+                <li>
+                    <a class="roll-tile" href="film/roll-01.html">
+                        <span class="roll-number">ROLL 01</span>
+                        <span class="roll-stock">Gold 200</span>
+                        <span class="roll-meta">2026-10 · 72 frames</span>
+                    </a>
+                </li>
+                -->
+                <ul class="roll-grid">
+                    <li>
+                        <!-- lab order 00837266 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 07</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-09 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- lab order 00827126 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 06</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-08 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- lab order 00817126 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 05</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-08 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- lab order 00937747 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 04</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-08 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- lab order 00927687 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 03</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-07 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- lab order 00917687 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 02</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-07 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- lab order 00822144 -->
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 01</span>
+                            <span class="roll-stock">Film stock TBD</span>
+                            <span class="roll-meta">2026-03 · frames TBD</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                </ul>
             </section>
             </div>
         </main>
