@@ -148,23 +148,24 @@ body {
 
 /* Film Photography section */
 .section-film {
-    background: #262320;
-    border: 3px solid #e8a33d;
-    color: #ece6da;
+    background: #fbf3e4;
+    border: 3px solid #f5b700;
+    color: #2b2420;
 }
 
 .section-film h2 {
+    color: #c0392b;
     font-family: Georgia, serif;
     font-weight: 400;
 }
 
 .section-film .section-link {
-    background: #e8a33d;
-    color: #1d1b19;
+    background: #c0392b;
+    color: white;
 }
 
 .section-film .section-link:hover {
-    background: #f0b65e;
+    background: #a93226;
 }
 
 /* Teddy's Gallery section */
