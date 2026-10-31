@@ -1,0 +1,543 @@
+/* film-styles.css
+   Film Photography gallery: a contact sheet under darkroom light.
+   Neutral charcoal so the photos carry the colour; amber is the only accent. */
+
+:root {
+    --film-bg: #1d1b19;        /* page background, warm charcoal */
+    --film-surface: #262320;   /* cards and panels */
+    --film-line: #3a3530;      /* hairlines and borders */
+    --film-text: #ece6da;      /* body text, soft off-white */
+    --film-muted: #9a9387;     /* captions and metadata */
+    --film-amber: #e8a33d;     /* frame numbers, links, focus/hover rings */
+    --film-mat: #ece6da;       /* the thin print border around thumbnails */
+
+    --font-serif: "DM Serif Display", Georgia, serif;
+    --font-sans: "DM Sans", system-ui, sans-serif;
+    --font-mono: "Space Mono", "Courier New", monospace;
+
+    --page-width: 1100px;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--film-bg);
+    color: var(--film-text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--film-amber);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--film-amber);
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    padding: 0.5rem 1rem;
+    background: var(--film-surface);
+    color: var(--film-amber);
+    z-index: 10;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+.film-page {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Top navigation */
+.film-nav {
+    border-bottom: 1px solid var(--film-line);
+}
+
+.film-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1.5rem;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    list-style: none;
+}
+
+.film-nav a {
+    display: inline-block;
+    padding: 0.4rem 0.2rem;
+    color: var(--film-text);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+.film-nav a:hover {
+    color: var(--film-amber);
+}
+
+.film-nav a[aria-current="page"] {
+    color: var(--film-amber);
+    border-bottom-color: var(--film-amber);
+}
+
+/* Header */
+.film-header {
+    padding: 3.5rem 0 2rem;
+    text-align: center;
+}
+
+.film-header h1 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(2.4rem, 7vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+}
+
+.film-subtitle {
+    margin: 0.75rem 0 0;
+    color: var(--film-muted);
+    font-size: 1.1rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Sprocket-hole strip used as a divider */
+.sprocket {
+    height: 18px;
+    margin: 0 0 2.5rem;
+    background:
+        radial-gradient(circle, var(--film-bg) 3.5px, transparent 4px) 0 50% / 22px 18px repeat-x,
+        var(--film-surface);
+    border-block: 1px solid var(--film-line);
+}
+
+/* Sections */
+.film-section {
+    margin-bottom: 3rem;
+}
+
+.film-section h2 {
+    margin: 0 0 1.25rem;
+    font-family: var(--font-serif);
+    font-size: 1.9rem;
+    font-weight: 400;
+}
+
+.film-intro {
+    max-width: 42rem;
+    margin: 0 auto 3rem;
+    font-size: 1.05rem;
+}
+
+.film-intro p {
+    margin: 0;
+}
+
+.roll-note {
+    max-width: 42rem;
+    margin: 0 0 2rem;
+}
+
+/* Small mono labels: frame numbers, roll numbers, metadata */
+.frame-label,
+.roll-number,
+.photo-caption,
+.roll-meta,
+.roll-badge {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+}
+
+.frame-label,
+.roll-number {
+    color: var(--film-amber);
+}
+
+.frame-label a {
+    color: inherit;
+}
+
+/* Roll menu */
+.roll-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.roll-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    height: 100%;
+    padding: 1.1rem 1.25rem;
+    background: var(--film-surface);
+    border: 1px solid var(--film-line);
+    border-radius: 4px;
+    color: var(--film-text);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+a.roll-tile[href]:hover,
+a.roll-tile[href]:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 2px var(--film-amber);
+    outline: none;
+}
+
+.roll-stock {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.roll-meta {
+    color: var(--film-muted);
+}
+
+.roll-badge {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--film-line);
+    border-radius: 999px;
+    color: var(--film-muted);
+}
+
+/* Placeholder roll (no page yet): muted, no hover lift */
+.roll-tile.is-disabled {
+    cursor: default;
+}
+
+.roll-tile.is-disabled .roll-number,
+.roll-tile.is-disabled .roll-stock {
+    color: var(--film-muted);
+}
+
+/* Photo grid (favorites and roll pages) */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.photo-card {
+    margin: 0;
+    padding: 0.75rem 0.75rem 1rem;
+    background: var(--film-surface);
+    border: 1px solid var(--film-line);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.photo-card:hover,
+.photo-card:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 2px var(--film-amber);
+}
+
+.photo-link {
+    display: block;
+    padding: 4px;               /* thin print mat */
+    background: var(--film-mat);
+}
+
+.photo-link:focus-visible {
+    outline-offset: 4px;
+}
+
+.photo-link img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;        /* half-frame shots are portrait */
+    object-fit: cover;
+    background: var(--film-bg);
+}
+
+/* A photo shot in landscape orientation */
+.photo-card.landscape {
+    grid-column: span 2;
+}
+
+.photo-card.landscape .photo-link img {
+    aspect-ratio: 4 / 3;
+}
+
+.photo-card figcaption {
+    padding-top: 0.6rem;
+}
+
+.photo-card .frame-label {
+    display: block;
+}
+
+.photo-title {
+    margin: 0.2rem 0 0;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.photo-caption {
+    margin: 0.3rem 0 0;
+    color: var(--film-muted);
+}
+
+.photo-note {
+    margin: 0.4rem 0 0;
+    font-size: 0.92rem;
+}
+
+/* Lightbox (built by js/film-gallery.js) */
+.lightbox {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: rgba(15, 14, 13, 0.96);
+    color: var(--film-text);
+}
+
+.lightbox::backdrop {
+    background: rgba(15, 14, 13, 0.85);
+}
+
+html.lightbox-open {
+    overflow: hidden;
+}
+
+.lightbox-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+    padding: 3.5rem 4.5rem 1.5rem;
+    overflow: hidden;
+}
+
+.lightbox-image {
+    max-width: 92vw;
+    max-height: 78vh;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;             /* the caption gives way, never the photo */
+    object-fit: contain;
+    padding: 4px;
+    background: var(--film-mat);
+    transition: opacity 0.2s;
+}
+
+.lightbox.is-loading .lightbox-image {
+    opacity: 0.4;
+}
+
+.lightbox-details {
+    flex: 0 1 auto;
+    width: min(36rem, 92vw);
+    min-height: 0;
+    max-height: 22vh;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.lightbox-details .photo-title {
+    font-size: 1.3rem;
+}
+
+.lightbox-details > :empty {
+    display: none;
+}
+
+/* Wide, short windows: caption beside the photo so it never pushes it off screen */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .lightbox-stage {
+        flex-direction: row;
+        gap: 2rem;
+        padding: 2rem 5rem;
+    }
+
+    .lightbox-image {
+        max-width: calc(92vw - 22rem);
+        max-height: 86vh;
+    }
+
+    .lightbox-details {
+        width: 18rem;
+        max-height: 86vh;
+        text-align: left;
+    }
+}
+
+.lightbox-button {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    color: var(--film-amber);
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lightbox-button:hover {
+    border-color: var(--film-amber);
+}
+
+.lightbox-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 2.4rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-prev {
+    left: 0.75rem;
+}
+
+.lightbox-next {
+    right: 0.75rem;
+}
+
+.lightbox-button[hidden] {
+    display: none;
+}
+
+/* Footer */
+.film-footer {
+    margin-top: 2rem;
+    padding: 2rem 0 2.5rem;
+    border-top: 1px solid var(--film-line);
+    color: var(--film-muted);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.film-footer p {
+    margin: 0.3rem 0;
+}
+
+/* Tablet: two across */
+@media (max-width: 768px) {
+    .film-page,
+    .film-nav ul {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .film-header {
+        padding-top: 2.5rem;
+    }
+
+    .roll-grid,
+    .photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lightbox-stage {
+        padding: 3.5rem 1rem 1rem;
+    }
+
+    .lightbox-image {
+        max-height: 64vh;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        top: auto;
+        bottom: 0.75rem;
+        transform: none;
+    }
+}
+
+/* Phone: one column */
+@media (max-width: 480px) {
+    .roll-grid,
+    .photo-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .photo-card.landscape {
+        grid-column: auto;
+    }
+
+    .film-nav ul {
+        gap: 0 1rem;
+        font-size: 0.95rem;
+    }
+
+    .lightbox-stage {
+        padding-bottom: 4.5rem;     /* room for the arrows at the bottom */
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .roll-tile,
+    .photo-card,
+    .lightbox-image {
+        transition: none;
+    }
+
+    a.roll-tile[href]:hover,
+    a.roll-tile[href]:focus-visible,
+    .photo-card:hover,
+    .photo-card:focus-within {
+        transform: none;
+    }
+}

@@ -3,3 +3,7 @@
 .git\
 *.jpg
 *.png
+
+# Film gallery photos must be committed so they deploy
+!film_photos/**/*.jpg
+!film_photos/**/*.png

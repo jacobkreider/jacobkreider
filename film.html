@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notes and frames from learning to shoot film on a half-frame camera">
+    <title>Film Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="css/film-styles.css" rel="stylesheet">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="film-nav" aria-label="Site">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bbs.html">Projects and Hobbies BBS</a></li>
+            <li><a href="film.html" aria-current="page">Film Photography</a></li>
+            <li><a href="https://teddykreider.com">Teddy Gallery</a></li>
+            <li><a href="https://neocities.org/site/madp0e7ix">About Me</a></li>
+        </ul>
+    </nav>
+
+    <div class="film-page">
+        <header class="film-header">
+            <h1>Film Photography</h1>
+            <!-- Placeholder subtitle: replace with your own -->
+            <p class="film-subtitle">Notes from learning to shoot film</p>
+        </header>
+
+        <div class="sprocket" aria-hidden="true"></div>
+
+        <main id="main">
+            <section class="film-intro">
+                <!-- Placeholder intro: replace with your own words -->
+                <p>I'm learning to shoot film on a Pentax 17, a half-frame 35mm camera. Each exposure
+                uses half of a regular 35mm frame, so every shot comes out as a vertical 3:4 picture and
+                a 36-exposure roll gives me about 72 photos. The film stock and month for each photo are
+                in its caption.</p>
+            </section>
+
+            <section class="film-section" aria-labelledby="rolls-heading">
+                <h2 id="rolls-heading">Rolls</h2>
+                <!--
+                ROLL TILES, newest first.
+
+                A placeholder tile (roll not posted yet) has the is-disabled class,
+                aria-disabled="true", a "coming soon" badge, and NO href, so it can't 404.
+
+                When a roll's page is ready (film/roll-NN.html, copied from film/roll-template.html):
+                  1. add href="film/roll-NN.html" to its <a>
+                  2. remove class="is-disabled" (keep "roll-tile") and aria-disabled="true"
+                  3. delete the <span class="roll-badge">coming soon</span> line
+                  4. replace "developing" with the YYYY-MM it was shot, and fill in the frame count
+                For a new roll, copy a whole <li> to the top of the list.
+
+                A finished tile looks like:
+                <li>
+                    <a class="roll-tile" href="film/roll-01.html">
+                        <span class="roll-number">ROLL 01</span>
+                        <span class="roll-stock">Gold 200</span>
+                        <span class="roll-meta">2026-10 · 72 frames</span>
+                    </a>
+                </li>
+                -->
+                <ul class="roll-grid">
+                    <li>
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 03</span>
+                            <span class="roll-stock">Portra 400</span>
+                            <span class="roll-meta">developing · &ndash; frames</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 02</span>
+                            <span class="roll-stock">Ektar 100</span>
+                            <span class="roll-meta">developing · &ndash; frames</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="roll-tile is-disabled" aria-disabled="true">
+                            <span class="roll-number">ROLL 01</span>
+                            <span class="roll-stock">Gold 200</span>
+                            <span class="roll-meta">developing · &ndash; frames</span>
+                            <span class="roll-badge">coming soon</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="sprocket" aria-hidden="true"></div>
+
+            <section class="film-section" aria-labelledby="favorites-heading">
+                <h2 id="favorites-heading">Favorites</h2>
+                <div class="photo-grid" data-gallery>
+                    <!--
+                    PHOTO CARD TEMPLATE: copy this <figure> block for each photo, then edit:
+                      - both image paths: film_photos/full/NAME.jpg and film_photos/thumbs/NAME.jpg
+                        (NAME is printed by tools/add-photos.py)
+                      - alt: the title plus a short description of what's in the photo
+                      - frame-label: ROLL NN · frame number (e.g. 12A). While the roll's tile is still
+                        "coming soon", leave it as plain text; once film/roll-NN.html exists, wrap
+                        "ROLL NN" in <a href="film/roll-NN.html">...</a>
+                      - photo-caption (required): film stock · YYYY-MM. Only if it wasn't shot on
+                        the Pentax 17, add the camera: Kodak Portra 400 · 2026-10 · Pentax K1000
+                      - photo-title and photo-note are optional; delete the line if unused
+                    For a photo shot in landscape orientation, use class="photo-card landscape".
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/NAME.jpg">
+                            <img src="film_photos/thumbs/NAME.jpg" alt="Title: short description" loading="lazy" width="440" height="587">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label"><a href="film/roll-01.html">ROLL 01</a> · 12A</span>
+                            <h3 class="photo-title">Title</h3>
+                            <p class="photo-caption">Kodak Portra 400 · 2026-10</p>
+                            <p class="photo-note">What I learned from this shot.</p>
+                        </figcaption>
+                    </figure>
+                    -->
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/placeholder-01.jpg">
+                            <img src="film_photos/thumbs/placeholder-01.jpg" alt="Placeholder 1: a plain charcoal frame with the word PLACEHOLDER" loading="lazy" width="440" height="587">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 01 · 01A</span>
+                            <h3 class="photo-title">Placeholder 1</h3>
+                            <p class="photo-caption">Kodak Gold 200 · 2026-10</p>
+                            <p class="photo-note">Placeholder image so the page can be reviewed. Real photos will replace it once the first roll is back.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/placeholder-02.jpg">
+                            <img src="film_photos/thumbs/placeholder-02.jpg" alt="Placeholder 2: a plain charcoal frame with the word PLACEHOLDER" loading="lazy" width="440" height="587">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 01 · 01B</span>
+                            <h3 class="photo-title">Placeholder 2</h3>
+                            <p class="photo-caption">Kodak Gold 200 · 2026-10</p>
+                            <p class="photo-note">Placeholder image so the page can be reviewed. Real photos will replace it once the first roll is back.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="photo-card">
+                        <a class="photo-link" href="film_photos/full/placeholder-03.jpg">
+                            <img src="film_photos/thumbs/placeholder-03.jpg" alt="Placeholder 3: a plain charcoal frame with the word PLACEHOLDER" loading="lazy" width="440" height="587">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">ROLL 01 · 02A</span>
+                            <h3 class="photo-title">Placeholder 3</h3>
+                            <p class="photo-caption">Kodak Gold 200 · 2026-10</p>
+                            <p class="photo-note">Placeholder image so the page can be reviewed. Real photos will replace it once the first roll is back.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+
+        <footer class="film-footer">
+            <p>Host your own site on <a href="https://neocities.org">Neocities</a> | Site style and code is available for free use!</p>
+            <p>Webring: <a href='https://webring.dinhe.net/prev/https://jacobkreider.com'>Previous</a> | <a href='https://webring.dinhe.net/next/https://jacobkreider.com'>Next</a></p>
+        </footer>
+    </div>
+
+    <script src="js/film-gallery.js"></script>
+</body>
+</html>

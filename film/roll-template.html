@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+ROLL PAGE TEMPLATE (not linked from anywhere; copy it, don't edit it)
+
+To add a roll:
+  1. Copy this file to film/roll-NN.html (e.g. film/roll-01.html).
+  2. In the copy, delete this comment and fill in the <title>, the roll heading
+     (ROLL NN, film stock, YYYY-MM) and the note about the roll.
+  3. Run python3 tools/add-photos.py to put the photos in /film_photos/full/ and
+     /film_photos/thumbs/, then copy one <figure class="photo-card"> block per photo into
+     the grid below. Every photo on the roll goes here, not just favorites.
+     On roll pages the frame label is just the frame number (e.g. 12A).
+     The photo-caption line is required: film stock · YYYY-MM (add the camera only if it
+     wasn't the Pentax 17). photo-title and photo-note are optional.
+     Delete the placeholder card when you add the first real one.
+  4. On film.html, turn the matching roll tile into a link: add href="film/roll-NN.html",
+     remove the is-disabled class, aria-disabled="true" and the "coming soon" badge, and
+     fill in the date and frame count. Add a new tile at the top if the roll has none yet.
+  5. Favorites: copy the cards you like best into the Favorites grid on film.html too,
+     and link their ROLL NN label to this page.
+
+Paths here are absolute (/css/..., /film_photos/...) so the page works from film/.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll NN · Film Stock · Film Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="/css/film-styles.css" rel="stylesheet">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="film-nav" aria-label="Site">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/bbs.html">Projects and Hobbies BBS</a></li>
+            <li><a href="/film.html" aria-current="page">Film Photography</a></li>
+            <li><a href="https://teddykreider.com">Teddy Gallery</a></li>
+            <li><a href="https://neocities.org/site/madp0e7ix">About Me</a></li>
+        </ul>
+    </nav>
+
+    <div class="film-page">
+        <header class="film-header">
+            <h1><span class="roll-number">ROLL NN</span><br>Film Stock</h1>
+            <p class="film-subtitle"><span class="roll-meta">YYYY-MM</span></p>
+        </header>
+
+        <div class="sprocket" aria-hidden="true"></div>
+
+        <main id="main">
+            <a class="back-link" href="/film.html">&larr; All rolls</a>
+
+            <p class="roll-note">A short note about this roll: where it was shot, the light, what worked and what didn't.</p>
+
+            <section class="film-section" aria-label="Photos on this roll">
+                <div class="photo-grid" data-gallery>
+                    <figure class="photo-card">
+                        <a class="photo-link" href="/film_photos/full/placeholder-01.jpg">
+                            <img src="/film_photos/thumbs/placeholder-01.jpg" alt="Placeholder: a plain charcoal frame with the word PLACEHOLDER" loading="lazy" width="440" height="587">
+                        </a>
+                        <figcaption>
+                            <span class="frame-label">01A</span>
+                            <h3 class="photo-title">Title</h3>
+                            <p class="photo-caption">Film Stock · YYYY-MM</p>
+                            <p class="photo-note">Optional note: what I learned from this shot.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+
+        <footer class="film-footer">
+            <p>Host your own site on <a href="https://neocities.org">Neocities</a> | Site style and code is available for free use!</p>
+        </footer>
+    </div>
+
+    <script src="/js/film-gallery.js"></script>
+</body>
+</html>
