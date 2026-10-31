@@ -110,26 +110,26 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
-/* madp0e7ix section */
-.section-madp0e7ix {
+/* BBS section */
+.section-bbs {
     background: #000;
     color: #33ff33;
     font-family: 'VT323', monospace;
     border: 3px solid #00ff00;
 }
 
-.section-madp0e7ix h2,
-.section-madp0e7ix p {
+.section-bbs h2,
+.section-bbs p {
     font-family: 'VT323', monospace;
 }
 
-.section-madp0e7ix .section-link {
+.section-bbs .section-link {
     background: rgba(0, 255, 0, 0.2);
     color: #33ff33;
     border: 1px solid #00ff00;
 }
 
-.section-madp0e7ix .section-link:hover {
+.section-bbs .section-link:hover {
     background: rgba(0, 255, 0, 0.3);
 }
 
