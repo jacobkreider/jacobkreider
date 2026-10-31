@@ -1,73 +1,0 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacob Kreider's Web Space</title>
-    <link href="css_test.css" rel="stylesheet">
-    <link href="css/guestbook.css" rel="stylesheet">
-    <script src="css/guestbook.js"></script>
-</head>
-<body>
-    <div id="container">
-        <nav id="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="baking.html">Baking</a></li>
-                <li><a href="bbs.html">madp0e7ix</a></li>
-                <li><a href="teddy.html">Teddy Gallery</a></li>
-                <li><a href="https://neocities.org/site/madp0e7ix">About Me</a></li>
-            </ul>
-        </nav>
-
-        <div class="main-grid">
-            <div class="left-column">
-                <div class="section section-intro">
-                    <h2>Welcome to My Corner of the Web</h2>
-                    <p>This is my personal site - a throwback to the days of static HTML and personal expression. Curated, non-algorithmic exploration.</p>
-                    <p>Bouncing from place to place and finding people and topics that interest you. Posting because it is fun, not because you're trying to game an engagement system.</p>
-                </div>
-
-                <div class="section section-guestbook">
-                    <h2>Guestbook</h2>
-                    <script src="config/guestbook-config.js"></script>
-                    <script src="css/guestbook.js"></script>
-                    <div class="entry-form">
-                        <input type="text" id="name" placeholder="Your name" maxlength="20">
-                        <input type="url" id="website" placeholder="Your website" maxlength="100">
-                        <input type="text" id="location" placeholder="Location" maxlength="50">
-                        <textarea id="message" placeholder="Your message" maxlength="100"></textarea>
-                        <button onclick="addEntry()">Sign Guestbook</button>
-                    </div>
-                    <div id="entries" class="entries-container"></div>
-                </div>
-            </div>
-
-            <div class="right-column">
-                <div class="section section-bbs">
-                    <h2>madp0e7ix BBS</h2>
-                    <p>CONNECT 9600 baud...</p>
-                    <p>Your terminal to retrocomputing, electronics, and machine learning research.</p>
-                    <a href="bbs.html" class="section-link">Enter BBS →</a>
-                </div>
-
-                <div class="section section-teddy">
-                    <h2>Teddy's Art Gallery</h2>
-                    <p>A colorful collection of artwork by my son Teddy. Featuring his latest Pre-K masterpieces!</p>
-                    <a href="teddy.html" class="section-link">Visit Gallery →</a>
-                </div>
-
-                <div class="section section-baking">
-                    <h2>Baking Adventures</h2>
-                    <p>Recipes, techniques, and experiments in bread making, pastries, and more.</p>
-                    <a href="baking.html" class="section-link">View Recipes →</a>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>© 2024 Jacob Kreider | Host your own site on Neocities | Words are mine but the site style and code is available for free use.</p>
-        </footer>
-    </div>
-</body>
-</html>
