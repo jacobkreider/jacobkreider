@@ -172,6 +172,61 @@ button:focus-visible {
     margin: 0 0 2rem;
 }
 
+/* Rolls sidebar beside the Favorites gallery */
+.film-layout {
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Stays in view while the gallery scrolls; scrolls itself if taller than the window */
+.film-rolls {
+    position: sticky;
+    top: 1.5rem;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    padding: 4px;               /* room for the hover/focus ring inside the scroll box */
+    margin: -4px;
+}
+
+.film-rolls h2 {
+    margin-bottom: 0.75rem;
+}
+
+.film-rolls .roll-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
+}
+
+/* Compact sidebar tile: badge on the roll-number line */
+.film-rolls .roll-tile {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.1rem 0.5rem;
+    padding: 0.6rem 1rem;
+}
+
+.film-rolls .roll-number {
+    grid-area: 1 / 1;
+}
+
+.film-rolls .roll-badge {
+    grid-area: 1 / 2;
+    align-self: center;
+    margin-top: 0;
+    font-size: 0.7rem;
+}
+
+.film-rolls .roll-stock,
+.film-rolls .roll-meta {
+    grid-column: 1 / -1;
+}
+
+.film-rolls .roll-stock {
+    font-size: 1.15rem;
+}
+
 /* Small mono labels: frame numbers, roll numbers, metadata */
 .frame-label,
 .roll-number,
@@ -478,6 +533,47 @@ html.lightbox-open {
     margin: 0.3rem 0;
 }
 
+/* Narrower screens: Rolls above Favorites instead of beside them */
+@media (max-width: 900px) {
+    .film-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .film-rolls {
+        position: static;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .film-rolls h2 {
+        margin-bottom: 1.25rem;
+    }
+
+    .film-rolls .roll-grid {
+        gap: 1rem;
+    }
+
+    .film-rolls .roll-tile {
+        display: flex;
+        padding: 1.1rem 1.25rem;
+    }
+
+    .film-rolls .roll-badge {
+        align-self: flex-start;
+        margin-top: 0.5rem;
+        font-size: 0.78rem;
+    }
+
+    .film-rolls .roll-stock {
+        font-size: 1.35rem;
+    }
+
+    .film-rolls .roll-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
 /* Tablet: two across */
 @media (max-width: 768px) {
     .film-page,
@@ -491,7 +587,8 @@ html.lightbox-open {
     }
 
     .roll-grid,
-    .photo-grid {
+    .photo-grid,
+    .film-rolls .roll-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -514,7 +611,8 @@ html.lightbox-open {
 /* Phone: one column */
 @media (max-width: 480px) {
     .roll-grid,
-    .photo-grid {
+    .photo-grid,
+    .film-rolls .roll-grid {
         grid-template-columns: minmax(0, 1fr);
     }
 

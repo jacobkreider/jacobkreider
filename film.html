@@ -39,7 +39,9 @@
                 in its caption.</p>
             </section>
 
-            <section class="film-section" aria-labelledby="rolls-heading">
+            <!-- Rolls down the left, Favorites in the main space (stacked on narrow screens) -->
+            <div class="film-layout">
+            <section class="film-section film-rolls" aria-labelledby="rolls-heading">
                 <h2 id="rolls-heading">Rolls</h2>
                 <!--
                 ROLL TILES, newest first.
@@ -133,9 +135,7 @@
                 </ul>
             </section>
 
-            <div class="sprocket" aria-hidden="true"></div>
-
-            <section class="film-section" aria-labelledby="favorites-heading">
+            <section class="film-section film-favorites" aria-labelledby="favorites-heading">
                 <h2 id="favorites-heading">Favorites</h2>
                 <div class="photo-grid" data-gallery>
                     <!--
@@ -636,6 +636,7 @@
                     </figure>
                 </div>
             </section>
+            </div>
         </main>
 
         <footer class="film-footer">
