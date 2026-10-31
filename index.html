@@ -26,6 +26,21 @@
 
 
 
+    <script>
+        // Each load of the guestbook form frame after the first means someone just
+        // signed, so reload the signatures frame (the query string skips the cache)
+        var guestbookFormLoads = 0;
+        function guestbookFormLoaded() {
+            guestbookFormLoads++;
+            if (guestbookFormLoads > 1) {
+                document.getElementById('guestbook-messages').src =
+                    'https://jacobkreider.atabook.org/?t=' + Date.now() + '#messages';
+            }
+        }
+    </script>
+
+
+
    
 
 
@@ -132,50 +147,6 @@
 
 
 
-                 <div class="section section-guestbook">
-
-
-
-                    <h2>Guestbook</h2>
-
-
-
-                    <!-- Replaced guestbook content with iframe -->
-
-
-
-                    <div class="guestbook-frame-container">
-
-
-
-                        <iframe 
-
-
-
-                            src="https://jacobkreider.atabook.org" 
-
-
-
-                            class="guestbook-frame"
-
-
-
-                            title="Jacob's Guestbook">
-
-
-
-                        </iframe>
-
-
-
-                    </div>
-
-
-
-                </div>
-
-
-
             </div>
 
 
@@ -272,7 +243,7 @@
 
 
 
-                    <h2>Film Photography</h2>
+                    <h2>Fun with Film</h2>
 
 
 
@@ -309,6 +280,76 @@
 
 
                     <a href="bbs.html" class="section-link">Enter BBS →</a>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <!-- Atabook serves the form and the signatures on one page, so it's embedded
+                 twice: one frame opens at #compose (the form), the other at #messages -->
+            <div class="section section-guestbook">
+
+
+
+                <h2>Guestbook</h2>
+
+
+
+                <div class="guestbook-panels">
+
+
+
+                    <div class="guestbook-panel">
+
+
+
+                        <h3>Sign it</h3>
+
+
+
+                        <div class="guestbook-frame-container guestbook-frame-container--form">
+
+
+
+                            <iframe id="guestbook-form" src="https://jacobkreider.atabook.org/#compose" class="guestbook-frame" title="Sign Jacob's guestbook" onload="guestbookFormLoaded()"></iframe>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="guestbook-panel">
+
+
+
+                        <h3>Signatures</h3>
+
+
+
+                        <div class="guestbook-frame-container guestbook-frame-container--messages">
+
+
+
+                            <iframe id="guestbook-messages" src="https://jacobkreider.atabook.org/#messages" class="guestbook-frame" title="Guestbook signatures"></iframe>
+
+
+
+                        </div>
+
+
+
+                    </div>
 
 
 
